@@ -1,0 +1,23 @@
+  
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: PythonScript@0
+  inputs:
+    script: |
+      print('Ola Mundo!!!!!!!!')
+      
+
+- script: |
+    echo Ola Mundo!
+    echo Bien Venido!
+  displayName: 'Hello via Script'

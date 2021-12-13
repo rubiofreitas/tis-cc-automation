@@ -1,3 +1,0 @@
-steps:
-- script: echo Hello, litle world!
-  displayName: 'Run a one-line script'
