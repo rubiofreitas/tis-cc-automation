@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
+- script: rubiofreitas/tis-cc-automation/tis-cc-automation/rubio_bash_hello.sh
   displayName: 'Run a one-line script'
 
 - script: |
