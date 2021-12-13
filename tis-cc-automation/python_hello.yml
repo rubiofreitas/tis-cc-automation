@@ -12,6 +12,8 @@ pool:
 
 
 - task: PythonScript@0
-  inputs:
-    script: |
-      print('Ola Mundo!!!!!!!!')
+    displayName: 'Run a Python script'
+    inputs:
+      scriptSource: inline
+      script: |
+        print("Hello World")
