@@ -10,14 +10,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
+
 - task: PythonScript@0
   inputs:
     script: |
       print('Ola Mundo!!!!!!!!')
-      
-
-- script: |
-    echo Ola Mundo!
-    echo Bien Venido!
-  displayName: 'Hello via Script'
