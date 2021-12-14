@@ -12,9 +12,24 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+<<<<<<< HEAD
 - task: PythonScript@0
   displayName: 'Run a Python script'
     inputs:
       scriptSource: inline
       script: |
         print ('Hello World')
+=======
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+  
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: 'print(''Hello world Python'')'
+  displayName: 'Script em Python'
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: 'print(''Hello world 1'')'
+>>>>>>> 05e51600f0b3f9fa6650a94ca3d47e490a6e6873
