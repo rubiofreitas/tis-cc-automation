@@ -1,3 +1,4 @@
+
   
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
@@ -10,10 +11,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-
+steps:
 - task: PythonScript@0
-    displayName: 'Run a Python script'
+  displayName: 'Run a Python script'
     inputs:
       scriptSource: inline
       script: |
-        print("Hello World")
+        print ('Hello World')
