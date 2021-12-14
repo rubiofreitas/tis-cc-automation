@@ -20,3 +20,7 @@ steps:
     scriptSource: 'inline'
     script: 'print(''Hello world Python'')'
   displayName: 'Script em Python'
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: 'print(''Hello world 1'')'
