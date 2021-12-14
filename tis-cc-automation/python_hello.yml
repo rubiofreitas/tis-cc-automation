@@ -1,3 +1,4 @@
+
   
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
@@ -10,10 +11,15 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
 
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
 - task: PythonScript@0
-    displayName: 'Run a Python script'
-    inputs:
-      scriptSource: inline
-      script: |
-        print("Hello World")
+  inputs:
+    scriptSource: 'inline'
+    script: 'print(''Hello world Python'')'
+  displayName: 'Run a multi-line script'
