@@ -17,12 +17,3 @@ steps:
   inputs:
     ansibleInterface: 'agentMachine'
     inventoriesAgentMachine: 'noInventory'
-
-  tasks:
-  - name: "EXEMPLO DE REGISTER"
-    shell: "date -u"
-    register: linux_date
-
-  - name: "EXIBINDO REGISTER"
-    debug:
-      msg: "{{ linux_date.start }}"
