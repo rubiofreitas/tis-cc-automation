@@ -18,7 +18,7 @@ steps:
     ansibleInterface: 'agentMachine'
     inventoriesAgentMachine: 'noInventory'
 
-tasks:
+  tasks:
   - name: "EXEMPLO DE REGISTER"
     shell: "date -u"
     register: linux_date
