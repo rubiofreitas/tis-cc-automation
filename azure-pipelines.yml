@@ -16,4 +16,5 @@ steps:
 - task: Ansible@0
   inputs:
     ansibleInterface: 'agentMachine'
+    playbookPathOnAgentMachine: 'tis-cc-automation/tis-cc-automation/ansible_simples.yml'
     inventoriesAgentMachine: 'noInventory'
