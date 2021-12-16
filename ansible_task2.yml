@@ -3,8 +3,16 @@
 - hosts: localhost
   gather_facts: yes
 
-  vars:
-    conteudoarquivo: Esse é um arquivo que foi criado pelo Ansible.
+  #vars:
+  #  conteudoarquivo: Esse é um arquivo que foi criado pelo Ansible.
+  
+  - name: "Criando arquivo em /tmp/infosobreoSistema.txt"
+    file: 
+      path: "/tmp/infosobreoSistema.txt"
+      state: touch  
+
+  - name: "Título arquivo Info Sobre o Sistema"
+    shell: "   INFORMAÇÕES SOBRE O SISTEMA ABAIXO >> /tmp/infosobreoSistema.txt"  
 
   tasks:
   - name: "Exibindo o Hostname"
