@@ -1,0 +1,19 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Iniciando
+  displayName: 'Iniciando'
+
+- script: |
+    python3 -m venv task2
+    source task2/bin/activate
+    pip install ansible
+    ansible-playbook ansible_task2.yml
+    echo /tmp/infosobreoSistema.txt
+    echo /tmp/teste_ansible.txt
+    deactivate
+  displayName: 'Task2.123'
