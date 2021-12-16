@@ -1,3 +1,4 @@
+
 ---
 - hosts: localhost
   gather_facts: yes
@@ -7,7 +8,7 @@
 
   tasks:
   - name: "Exibindo o Hostname"
-    shell: "hostname >> /tmp/infosobreoSistema | hostname"
+    shell: "hostname >> /tmp/infosobreoSistema.txt | hostname"
     register: hostname
 
   - name: "Exibindo o Nome em DEBUG"
@@ -15,7 +16,7 @@
       msg: "{{ hostname.stdout }}"  
 
   - name: "Exibindo o IP"
-    shell: "hostname -I >> /tmp/infosobreoSistema | hostname -I"
+    shell: "hostname -I >> /tmp/infosobreoSistema.txt | hostname -I"
     register: IP  
 
   - name: "Exibindo o IP em DEBUG"
@@ -23,7 +24,7 @@
       msg: "{{ IP.stdout }}" 
 
   - name: "Exibindo OsFamily "
-    shell: "ansible all -m setup -u ansible --become | grep ansible_os_family >> /tmp/infosobreoSistema | ansible all -m setup -u ansible --become | grep ansible_os_family"
+    shell: "ansible localhost -m setup | grep ansible_os_family >> /tmp/infosobreoSistema.txt | ansible localhost -m setup | grep ansible_os_family"
     register: OsFamily        
 
   - name: "Exibindo o OsFamily em DEBUG"
@@ -31,7 +32,7 @@
       msg: "{{ OsFamily.stdout }}"
 
   - name: "Exibindo Distribution"
-    shell: "cat /etc/*-release | grep DISTRIB_DESCRIPTION >> /tmp/infosobreoSistema | cat /etc/*-release | grep DISTRIB_DESCRIPTION"
+    shell: "cat /etc/*-release | grep DISTRIB_DESCRIPTION >> /tmp/infosobreoSistema.txt | cat /etc/*-release | grep DISTRIB_DESCRIPTION"
     register: Distribution        
 
   - name: "Exibindo a Distribution em DEBUG"
@@ -39,7 +40,7 @@
       msg: "{{ Distribution.stdout }}"      
 
   - name: "Exibindo Memória"
-    shell: "free -h | grep Mem >> /tmp/infosobreoSistema | free -h | grep Mem"
+    shell: "free -h | grep Mem >> /tmp/infosobreoSistema.txt | free -h | grep Mem"
     register: memory    
 
   - name: "Exibindo a Memória em DEBUG"
