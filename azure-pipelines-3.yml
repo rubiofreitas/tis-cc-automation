@@ -13,7 +13,10 @@ steps:
     source task2/bin/activate
     pip install ansible
     ansible-playbook ansible_task2.yml
-    echo /tmp/infosobreoSistema.txt
-    echo /tmp/teste_ansible.txt
     deactivate
   displayName: 'Task2.123'
+
+- script: |
+    cat /tmp/infosobreoSistema.txt
+    cat /tmp/teste_ansible.txt
+  displayName: 'Lendo Arquivos Gerados'
