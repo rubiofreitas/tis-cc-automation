@@ -1,6 +1,5 @@
 ---
-- hosts: all
-  user: ansible
+- hosts: localhost
   gather_facts: yes
 
   tasks:
