@@ -11,7 +11,7 @@
       state: touch  
 
   - name: "Título arquivo Info Sobre o Sistema"
-    shell: "   INFORMAÇÕES SOBRE O SISTEMA ABAIXO >> /tmp/infosobreoSistema.txt"  
+    shell: "echo INFORMAÇÕES SOBRE O SISTEMA ABAIXO >> /tmp/infosobreoSistema.txt"  
 
   - name: "Exibindo o Hostname"
     shell: "hostname >> /tmp/infosobreoSistema.txt | hostname"
