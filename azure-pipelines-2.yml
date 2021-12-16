@@ -10,5 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello Wordl!
-  displayName: 'Run a one-line script'
+- script: echo Iniciando
+  displayName: 'Iniciando'
+
+- script: |
+    apt-get install ansible -y
+    ansible-playbook ansible_simples2.yml
+  displayName: 'Tarefa 2'

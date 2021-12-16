@@ -1,0 +1,14 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Iniciando
+  displayName: 'Iniciando'
+
+- script: |
+    apt-get install ansible -y
+    ansible-playbook ansible_simples2_VALIDADO.yml
+  displayName: 'Instalando ansible e executando playbook Simples'
