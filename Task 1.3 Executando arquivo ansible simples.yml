@@ -10,5 +10,5 @@ steps:
 
 - script: |
     apt-get install ansible -y
-    ansible-playbook ansible_simples2.yml
+    ansible-playbook ansible_simples2_VALIDADO.yml
   displayName: 'Instalando ansible e executando playbook Simples'
