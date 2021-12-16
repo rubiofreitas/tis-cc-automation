@@ -1,0 +1,55 @@
+---
+- hosts: localhost
+  gather_facts: yes
+
+  vars:
+    conteudoarquivo: Esse é um arquivo que foi criado pelo Ansible.
+
+  tasks:
+  - name: "Exibindo o Hostname"
+    shell: "hostname >> /tmp/infosobreoSistema | hostname"
+    register: hostname
+
+  - name: "Exibindo o Nome em DEBUG"
+    debug:
+      msg: "{{ hostname.stdout }}"  
+
+  - name: "Exibindo o IP"
+    shell: "hostname -I >> /tmp/infosobreoSistema | hostname -I"
+    register: IP  
+
+  - name: "Exibindo o IP em DEBUG"
+    debug:
+      msg: "{{ IP.stdout }}" 
+
+  - name: "Exibindo OsFamily "
+    shell: "ansible all -m setup -u ansible --become | grep ansible_os_family >> /tmp/infosobreoSistema | ansible all -m setup -u ansible --become | grep ansible_os_family"
+    register: OsFamily        
+
+  - name: "Exibindo o OsFamily em DEBUG"
+    debug:
+      msg: "{{ OsFamily.stdout }}"
+
+  - name: "Exibindo Distribution"
+    shell: "cat /etc/*-release | grep DISTRIB_DESCRIPTION >> /tmp/infosobreoSistema | cat /etc/*-release | grep DISTRIB_DESCRIPTION"
+    register: Distribution        
+
+  - name: "Exibindo a Distribution em DEBUG"
+    debug:
+      msg: "{{ Distribution.stdout }}"      
+
+  - name: "Exibindo Memória"
+    shell: "free -h | grep Mem >> /tmp/infosobreoSistema | free -h | grep Mem"
+    register: memory    
+
+  - name: "Exibindo a Memória em DEBUG"
+    debug:
+      msg: "{{ memory.stdout }}"   
+
+  - name: "Criando arquivo em /tmp"
+    file: 
+      path: "/tmp/teste_ansible.txt"
+      state: touch
+
+  - name: "Inserindo conteúdo em arquivo"
+    shell: "echo Esse é um arquivo que foi criado pelo Ansible. > /tmp/teste_ansible.txt"
