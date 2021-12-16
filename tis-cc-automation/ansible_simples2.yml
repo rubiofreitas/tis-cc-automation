@@ -1,0 +1,13 @@
+---
+- hosts: all
+  user: ansible
+  gather_facts: yes
+
+  tasks:
+  - name: "Exibindo o nome"
+    shell: "hostname"
+    register: hostname
+
+  - name: "Exibindo o nome em DEBUG"
+    debug:
+      msg: "{{ hostname }}"
